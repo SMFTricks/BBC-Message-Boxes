@@ -12,4 +12,4 @@ Developed by [Diego Andrés](https://github.com/DiegoAndresCortes)
 * BBC Message Boxes can be installed on either SMF 2.0.x or SMF 2.1 (Download the correct branch, master is 2.1)
 
 ## How to install
-* You can install BBC You through the package manager of your forum administration.
+* You can install BBC Message Boxes through the package manager of your forum administration.
