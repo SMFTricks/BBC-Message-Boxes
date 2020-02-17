@@ -48,6 +48,36 @@ class MessageBoxes
 		);
 	}
 
+	public static function bbc_code(&$codes)
+	{
+		global $user_info, $txt;
+
+		$codes[] = array(
+			'tag' => 'error',
+			'before' => '<div class="error_bbc">',
+			'after' => '</div>',
+			'block_level' => true,
+		);
+		$codes[] = array(
+			'tag' => 'warning',
+			'before' => '<div class="warning_bbc">',
+			'after' => '</div>',
+			'block_level' => true,
+		);
+		$codes[] = array(
+			'tag' => 'okay',
+			'before' => '<div class="okay_bbc">',
+			'after' => '</div>',
+			'block_level' => true,
+		);
+		$codes[] = array(
+			'tag' => 'info',
+			'before' => '<div class="info_bbc">',
+			'after' => '</div>',
+			'block_level' => true,
+		);
+	}
+
 	public static function settings()
 	{
 		
