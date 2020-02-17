@@ -1,0 +1,50 @@
+<?xml version="1.0"?>
+<!DOCTYPE package-info SYSTEM "http://www.simplemachines.org/xml/package-info">
+<package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
+	<id>smftricks:bbcmessageboxes</id>
+	<name>BBC Message Boxes</name>
+	<version>2.0.1</version>
+	<type>modification</type>
+	<install for="2.0.0 - 2.99.99">
+
+		<!-- Mod Readme -->
+		<readme parsebbc="true">readme.txt</readme>
+
+		<!-- BBC images and css -->
+		<require-dir name="Themes" destination="$boarddir">BBC images and css</require-dir>
+
+		<!-- BBC Files -->
+		<require-file name="BBC-MessageBoxes.php" destination="$sourcedir">Source file</require-file>
+
+		<!-- Language -->
+		<modification>language.xml</modification>
+
+		<!-- Hooks -->
+		<code>hooks.php</code>
+
+	</install>
+	
+	<uninstall for="2.0.0 - 2.99.99">
+
+		<!-- Hooks Remove -->
+		<code>remove.php</code>
+
+		<!-- Source Files -->
+		<remove-file name="$sourcedir/BBC-MessageBoxes.php">Source file</remove-file>
+
+		<!-- Language -->
+		<modification reverse="true">language.xml</modification>
+
+		<!-- BBC images -->
+		<remove-file name="$imagesdir/bbc/okay.gif">BBC images</remove-file>
+		<remove-file name="$imagesdir/bbc/error.gif">BBC images</remove-file>
+		<remove-file name="$imagesdir/bbc/info.gif">BBC images</remove-file>
+		<remove-file name="$imagesdir/bbc/warning.gif">BBC images</remove-file>
+		<remove-dir name="$imagesdir/mBox">BBC images</remove-dir>
+
+		<!-- BBC CSS -->
+		<remove-file name="$themedir/css/mBox.css">BBC CSS</remove-file>
+
+	</uninstall>
+	
+</package-info>
