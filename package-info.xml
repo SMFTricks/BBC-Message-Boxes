@@ -38,5 +38,7 @@
 		<remove-dir name="$imagesdir/mboxes">BBC images</remove-dir>
 		<!-- BBC CSS -->
 		<remove-file name="$themedir/css/mboxes.css">BBC CSS</remove-file>
+		<!-- BBC JS -->
+		<remove-file name="$themedir/scripts/mboxes.js">BBC JS</remove-file>
 	</uninstall>
 </package-info>
