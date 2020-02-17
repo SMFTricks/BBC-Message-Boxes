@@ -100,6 +100,12 @@ class MessageBoxes
 
 	public static function settings(&$config_vars)
 	{
-		
+		global $txt;
+
+		loadLanguage('mboxes/MessageBoxes');
+		$config_vars += [
+			['title', 'mboxes_settings'],
+			['permissions', 'mboxes_use', 'subtext' => $txt['permissionhelp_mboxes_use']],
+		];
 	}
 }
