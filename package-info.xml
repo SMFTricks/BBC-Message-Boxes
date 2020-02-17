@@ -24,6 +24,7 @@
 		<hook hook="integrate_pre_include" function="$sourcedir/BBC-MessageBoxes.php" file="" />
 		<hook hook="integrate_bbc_buttons" function="MessageBoxes::bbc_buttons" file="$sourcedir/BBC-MessageBoxes.php" />
 		<hook hook="integrate_bbc_buttons" function="MessageBoxes::bbc_code" file="$sourcedir/BBC-MessageBoxes.php" />
+		<hook hook="integrate_bbc_buttons" function="MessageBoxes::permissions" file="$sourcedir/BBC-MessageBoxes.php" />
 		<hook hook="integrate_general_mod_settings" function="MessageBoxes::settings" file="$sourcedir/BBC-MessageBoxes.php" />
 	</install>
 	
@@ -32,6 +33,7 @@
 		<hook hook="integrate_pre_include" function="$sourcedir/BBC-MessageBoxes.php" file="" reverse="true" />
 		<hook hook="integrate_bbc_buttons" function="MessageBoxes::bbc_buttons" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
 		<hook hook="integrate_bbc_buttons" function="MessageBoxes::bbc_code" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
+		<hook hook="integrate_bbc_buttons" function="MessageBoxes::permissions" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
 		<hook hook="integrate_general_mod_settings" function="MessageBoxes::settings" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
 		<!-- Source Files -->
 		<remove-file name="$sourcedir/BBC-MessageBoxes.php">Source file</remove-file>
