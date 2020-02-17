@@ -2,7 +2,7 @@
     <img src="https://smftricks.com/logos/logo.png">
  </p>
 
-## BBC You
+## BBC Message Boxes
 Developed by [Diego Andrés](https://github.com/DiegoAndresCortes)
 
 ## Introduction
