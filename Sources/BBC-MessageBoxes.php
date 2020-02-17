@@ -18,7 +18,8 @@ class MessageBoxes
 		global $txt;
 
 		// Permission to use these??
-		/** TODO */
+		if (!allowedTo('mboxes_use'))
+			return;
 
 		// Message Boxes bits
 		loadLanguage('mboxes/MessageBoxes');
@@ -52,6 +53,10 @@ class MessageBoxes
 	{
 		global $user_info, $txt;
 
+		// Permission to use these??
+		/*if (!allowedTo('mboxes_use'))
+			return;*/
+
 		$codes[] = array(
 			'tag' => 'error',
 			'before' => '<div class="error_bbc">',
@@ -78,7 +83,22 @@ class MessageBoxes
 		);
 	}
 
-	public static function settings()
+	public static function permissions(&$permissionGroups, &$permissionList, &$leftPermissionGroups, &$hiddenPermissions, &$relabelPermissions)
+	{
+		global $txt;
+
+		$permissions = [
+			'mboxes_use' => false,
+		];
+
+		$permissionGroups['membergroup'] = ['mboxes'];
+		foreach ($permissions as $p => $s) {
+			$permissionList['membergroup'][$p] = [$s,'mboxes','mboxes'];
+			$hiddenPermissions[] = $p;
+		}
+	}
+
+	public static function settings(&$config_vars)
 	{
 		
 	}
