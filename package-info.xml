@@ -38,6 +38,8 @@
 		<remove-file name="$sourcedir/BBC-MessageBoxes.php">Source file</remove-file>
 		<!-- BBC images -->
 		<remove-dir name="$imagesdir/mboxes">BBC images</remove-dir>
+		<!-- BBC languages -->
+		<remove-dir name="$languagedir/mboxes">BBC languages</remove-dir>
 		<!-- BBC CSS -->
 		<remove-file name="$themedir/css/mboxes.css">BBC CSS</remove-file>
 		<!-- BBC JS -->
