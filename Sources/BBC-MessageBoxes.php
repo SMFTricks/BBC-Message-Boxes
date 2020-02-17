@@ -18,7 +18,7 @@ class MessageBoxes
 		global $txt;
 
 		// Message Boxes bits
-		loadLanguage('mboxes/MessageBoxes');
+		loadLanguage('mboxes/');
 		loadCSSFile('mboxes.css', array('minimize' => true, 'default_theme' => true));
 		loadJavaScriptFile('mboxes.js', array('minimize' => true, 'default_theme' => true));
 
@@ -96,7 +96,7 @@ class MessageBoxes
 	{
 		global $txt;
 
-		loadLanguage('mboxes/MessageBoxes');
+		loadLanguage('mboxes/');
 		$config_vars += [
 			['title', 'mboxes_settings'],
 			['permissions', 'mboxes_use', 'subtext' => $txt['permissionhelp_mboxes_use']],
