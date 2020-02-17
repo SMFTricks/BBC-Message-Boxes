@@ -17,14 +17,14 @@ class MessageBoxes
 	{
 		global $txt;
 
-		// Permission to use these??
-		if (!allowedTo('mboxes_use'))
-			return;
-
 		// Message Boxes bits
 		loadLanguage('mboxes/MessageBoxes');
 		loadCSSFile('mboxes.css', array('minimize' => true, 'default_theme' => true));
 		loadJavaScriptFile('mboxes.js', array('minimize' => true, 'default_theme' => true));
+
+		// Permission to use these?
+		if (!allowedTo('mboxes_use'))
+			return;
 
 		$bbc_tags[count($bbc_tags)-1][] = array();
 		$bbc_tags[count($bbc_tags)-1][] = array(
@@ -51,33 +51,30 @@ class MessageBoxes
 
 	public static function bbc_code(&$codes)
 	{
-		global $user_info, $txt;
+		global $modSettings;
 
-		// Permission to use these??
-		/*if (!allowedTo('mboxes_use'))
-			return;*/
 
 		$codes[] = array(
 			'tag' => 'error',
-			'before' => '<div class="error_bbc">',
+			'before' => '<div class="error_bbc'.(empty($modSettings['mboxes_style']) || $modSettings['mboxes_style'] == 'classic' ? '' : ' '.$modSettings['mboxes_style']). '">',
 			'after' => '</div>',
 			'block_level' => true,
 		);
 		$codes[] = array(
 			'tag' => 'warning',
-			'before' => '<div class="warning_bbc">',
+			'before' => '<div class="warning_bbc'.(empty($modSettings['mboxes_style']) || $modSettings['mboxes_style'] == 'classic' ? '' : ' '.$modSettings['mboxes_style']). '">',
 			'after' => '</div>',
 			'block_level' => true,
 		);
 		$codes[] = array(
 			'tag' => 'okay',
-			'before' => '<div class="okay_bbc">',
+			'before' => '<div class="okay_bbc'.(empty($modSettings['mboxes_style']) || $modSettings['mboxes_style'] == 'classic' ? '' : ' '.$modSettings['mboxes_style']). '">',
 			'after' => '</div>',
 			'block_level' => true,
 		);
 		$codes[] = array(
 			'tag' => 'info',
-			'before' => '<div class="info_bbc">',
+			'before' => '<div class="info_bbc'.(empty($modSettings['mboxes_style']) || $modSettings['mboxes_style'] == 'classic' ? '' : ' '.$modSettings['mboxes_style']). '">',
 			'after' => '</div>',
 			'block_level' => true,
 		);
@@ -85,12 +82,9 @@ class MessageBoxes
 
 	public static function permissions(&$permissionGroups, &$permissionList, &$leftPermissionGroups, &$hiddenPermissions, &$relabelPermissions)
 	{
-		global $txt;
-
 		$permissions = [
-			'mboxes_use' => false,
+			'mboxes_use' => true,
 		];
-
 		$permissionGroups['membergroup'] = ['mboxes'];
 		foreach ($permissions as $p => $s) {
 			$permissionList['membergroup'][$p] = [$s,'mboxes','mboxes'];
@@ -106,6 +100,7 @@ class MessageBoxes
 		$config_vars += [
 			['title', 'mboxes_settings'],
 			['permissions', 'mboxes_use', 'subtext' => $txt['permissionhelp_mboxes_use']],
+			['select', 'mboxes_style', $txt['mboxes_types']], 
 		];
 	}
 }
