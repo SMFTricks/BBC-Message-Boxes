@@ -1,82 +1,50 @@
-// Defines the formatting info that SCEditor uses to render a BBCode in the editor.
-// See https://www.sceditor.com/documentation/custom-bbcodes for info.
-sceditor.formats.bbcode.set(
+// Defines the command info that SCEditor uses when the user clicks a BBCode's button.
+// See https://www.sceditor.com/documentation/custom-commands for info.
+sceditor.command.set(
 	'error', {
-		tags: {
-			div: {
-				class: 'error_bbc'
-			}
+		// Called when editor is in WYSIWYG mode.
+		exec: function(caller) {
+			this.insert('[error]', '[/error]');
 		},
-		// Called when toggling from WYSIWYG mode to source mode.
-		format: function (element, content) {
-			return '[error]' + content + '[/error]';
-		},
-		// Called when toggling from source mode to WYSIWYG mode.
-		html: function (token, attrs, content) {
-			return '<div class="error_bbc">' + content + '</div>';
-		},
-		// Other options
-		allowsEmpty: true,
-		isInline: false
-	},
+		// Called when editor is in source mode.
+		txtExec: function(caller) {
+			this.insert('[error]', '[/error]');
+		}
+	}
 );
-sceditor.formats.bbcode.set(
+sceditor.command.set(
 	'okay', {
-		tags: {
-			div: {
-				class: 'okay_bbc'
-			}
+		// Called when editor is in WYSIWYG mode.
+		exec: function(caller) {
+			this.insert('[okay]', '[/okay]');
 		},
-		// Called when toggling from WYSIWYG mode to source mode.
-		format: function (element, content) {
-			return '[okay]' + content + '[/okay]';
-		},
-		// Called when toggling from source mode to WYSIWYG mode.
-		html: function (token, attrs, content) {
-			return '<div class="okay_bbc">' + content + '</div>';
-		},
-		// Other options
-		allowsEmpty: true,
-		isInline: false
-	},
+		// Called when editor is in source mode.
+		txtExec: function(caller) {
+			this.insert('[okay]', '[/okay]');
+		}
+	}
 );
-sceditor.formats.bbcode.set(
+sceditor.command.set(
 	'info', {
-		tags: {
-			div: {
-				class: 'info_bbc'
-			}
+		// Called when editor is in WYSIWYG mode.
+		exec: function(caller) {
+			this.insert('[info]', '[/info]');
 		},
-		// Called when toggling from WYSIWYG mode to source mode.
-		format: function (element, content) {
-			return '[info]' + content + '[/info]';
-		},
-		// Called when toggling from source mode to WYSIWYG mode.
-		html: function (token, attrs, content) {
-			return '<div class="info_bbc">' + content + '</div>';
-		},
-		// Other options
-		allowsEmpty: true,
-		isInline: false
-	},
+		// Called when editor is in source mode.
+		txtExec: function(caller) {
+			this.insert('[info]', '[/info]');
+		}
+	}
 );
-sceditor.formats.bbcode.set(
+sceditor.command.set(
 	'warning', {
-		tags: {
-			div: {
-				class: 'warning_bbc'
-			}
+		// Called when editor is in WYSIWYG mode.
+		exec: function(caller) {
+			this.insert('[warning]', '[/warning]');
 		},
-		// Called when toggling from WYSIWYG mode to source mode.
-		format: function (element, content) {
-			return '[warning]' + content + '[/warning]';
-		},
-		// Called when toggling from source mode to WYSIWYG mode.
-		html: function (token, attrs, content) {
-			return '<div class="warning_bbc">' + content + '</div>';
-		},
-		// Other options
-		allowsEmpty: true,
-		isInline: false
-	},
+		// Called when editor is in source mode.
+		txtExec: function(caller) {
+			this.insert('[warning]', '[/warning]');
+		}
+	}
 );
