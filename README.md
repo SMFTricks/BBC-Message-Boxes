@@ -15,3 +15,6 @@ Developed by [Diego Andrés](https://github.com/DiegoAndresCortes)
 
 ## How to install
 * You can install BBC Message Boxes through the package manager of your forum administration.
+
+## Changelog
+You can find the changelog for BBC Message Boxes on SMF Tricks: [Changelog](https://smftricks.com/index.php?topic=2113.0)
