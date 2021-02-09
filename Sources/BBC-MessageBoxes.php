@@ -82,14 +82,7 @@ class MessageBoxes
 
 	public static function permissions(&$permissionGroups, &$permissionList, &$leftPermissionGroups, &$hiddenPermissions, &$relabelPermissions)
 	{
-		$permissions = [
-			'mboxes_use' => true,
-		];
-		$permissionGroups['membergroup'] = ['mboxes'];
-		foreach ($permissions as $p => $s) {
-			$permissionList['membergroup'][$p] = [$s,'mboxes','mboxes'];
-			$hiddenPermissions[] = $p;
-		}
+		$permissionGroups['membergroup']['mboxes_use'] = [false, 'general', 'view_basic_info'];
 	}
 
 	public static function settings(&$config_vars)
@@ -99,7 +92,7 @@ class MessageBoxes
 		loadLanguage('mboxes/');
 		$config_vars += [
 			['title', 'mboxes_settings'],
-			['permissions', 'mboxes_use', 'subtext' => $txt['permissionhelp_mboxes_use']],
+			['permissions', 'mboxes_use', 'subtext' => $txt['permissionhelp_mboxes_use'] . $txt['permissionname_mboxes_use_desc']],
 			['select', 'mboxes_style', $txt['mboxes_types']], 
 		];
 	}
