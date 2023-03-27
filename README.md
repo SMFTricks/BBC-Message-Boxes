@@ -1,21 +1,21 @@
- <p align="center">
-    <img src="https://smftricks.com/logos/logo.png">
- </p>
+![SMF Tricks - Free & Premium Mods and Themes for SMF](https://smftricks.com/logos/logo.png)
 
-## BBC Message Boxes
-<img src="https://img.shields.io/badge/License-MPL 2.0-a05a3f?style=flat-square"> <img src="https://img.shields.io/badge/SMF-2.1-3f73a0?style=flat-square">
+# BBC Message Boxes
+![License](https://img.shields.io/badge/License-MPL%202.0-248049) ![Hooks Only](https://img.shields.io/badge/Hooks%20Only-Yes-6041a3) ![SMF 2.1](https://img.shields.io/badge/SMF-2.1-3f73a0)
 
-- Developed by [Diego Andrés](https://github.com/DiegoAndresCortes)
-- Original developer: [grafitus](https://github.com/beratdogan)
+* Developed by [Diego Andrés](https://github.com/DiegoAndresCortes)
+* Original Developer: [Berat "grafitus" Dogan](https://github.com/beratdogan)
 
 ## Introduction
-* BBC Message Boxes mod will allow you to use four different message boxes (error, warning, okay and info).
+BBC Message Boxes mod will allow you to use four different message boxes (error, warning, okay and info).
 
-## Requirements
-* BBC Message Boxes can be installed on either SMF 2.0.x or SMF 2.1 (Download the correct branch, master is 2.1)
+### Features
+- Select the type of the icons (classic, modern, modern octagone)
+- Set permissions to see and use the BBC's
 
-## How to install
-* You can install BBC Message Boxes through the package manager of your forum administration.
-
-## Changelog
-You can find the changelog for BBC Message Boxes on SMF Tricks: [Changelog](https://smftricks.com/index.php?topic=2113.0)
+### Localization
+- ![English](https://www.simplemachines.org/site_images/lang/english.gif) English
+- ![Spanish](https://www.simplemachines.org/site_images/lang/spanish.gif) English
+---
+### [Changelog](https://github.com/SMFTricks/BBC-Message-Boxes/blob/master/CHANGELOG.md)
+### [GitHub](https://github.com/SMFTricks/BBC-Message-Boxes)
