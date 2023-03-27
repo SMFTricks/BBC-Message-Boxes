@@ -1,12 +1,11 @@
 /**
  * @package BBC Message Boxes
- * @version 3.0
+ * @version 3.1
  * @author Diego Andrés <diegoandres_cortes@outlook.com>
- * @copyright Copyright (c) 2020, SMF Tricks
+ * @copyright Copyright (c) 2023, SMF Tricks
  * @license https://www.mozilla.org/en-US/MPL/2.0/
  */
-// Defines the command info that SCEditor uses when the user clicks a BBCode's button.
-// See https://www.sceditor.com/documentation/custom-commands for info.
+
 sceditor.command.set(
 	'error', {
 		// Called when editor is in WYSIWYG mode.
@@ -18,8 +17,7 @@ sceditor.command.set(
 			this.insert('[error]', '[/error]');
 		}
 	}
-);
-sceditor.command.set(
+).set(
 	'okay', {
 		// Called when editor is in WYSIWYG mode.
 		exec: function(caller) {
@@ -30,8 +28,7 @@ sceditor.command.set(
 			this.insert('[okay]', '[/okay]');
 		}
 	}
-);
-sceditor.command.set(
+).set(
 	'info', {
 		// Called when editor is in WYSIWYG mode.
 		exec: function(caller) {
@@ -42,8 +39,7 @@ sceditor.command.set(
 			this.insert('[info]', '[/info]');
 		}
 	}
-);
-sceditor.command.set(
+).set(
 	'warning', {
 		// Called when editor is in WYSIWYG mode.
 		exec: function(caller) {

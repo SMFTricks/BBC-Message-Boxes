@@ -3,11 +3,11 @@
 <package-info xmlns="http://www.simplemachines.org/xml/package-info" xmlns:smf="http://www.simplemachines.org/">
 	<id>smftricks:bbcmessageboxes</id>
 	<name>BBC Message Boxes</name>
-	<version>3.0.1</version>
+	<version>3.1</version>
 	<type>modification</type>
-	<install for="2.1 - 2.1.99, 2.1 Beta 1 - 3">
+	<install for="2.1 - 2.1.99">
 		<!-- Mod Readme -->
-		<readme lang="english" parsebbc="true" type="file">readme.txt</readme>
+		<readme lang="english" parsebbc="true" type="file">readme/readme.english.txt</readme>
 		<!-- License -->
 		<license type="inline" parsebbc="false">
 			This Source Code Form is subject to the terms of the Mozilla Public
@@ -17,20 +17,16 @@
 		<!-- BBC Files -->
 		<require-dir name="Sources" destination="$boarddir">Source file</require-dir>
 		<!-- BBC images and css -->
-		<require-dir name="Themes" destination="$boarddir">BBC images and css</require-dir>
+		<require-dir name="Themes" destination="$boarddir">Theme files</require-dir>
 		<!-- Hooks -->
-		<hook hook="integrate_bbc_buttons" function="MessageBoxes::bbc_buttons" file="$sourcedir/BBC-MessageBoxes.php" />
-		<hook hook="integrate_bbc_codes" function="MessageBoxes::bbc_code" file="$sourcedir/BBC-MessageBoxes.php" />
-		<hook hook="integrate_load_permissions" function="MessageBoxes::permissions" file="$sourcedir/BBC-MessageBoxes.php" />
-		<hook hook="integrate_general_mod_settings" function="MessageBoxes::settings" file="$sourcedir/BBC-MessageBoxes.php" />
+		<hook hook="integrate_pre_load" function="BBC_MessageBoxes::initialize#" file="$sourcedir/BBC-MessageBoxes.php" />
+		<!-- Redirect -->
+		<redirect url="?action=admin;area=modsettings" timeout="3000"/>
 	</install>
 	
-	<uninstall for="2.1 - 2.1.99, 2.1 Beta 1 - 3">
+	<uninstall for="2.1 - 2.1.99">
 		<!-- Hooks Remove -->
-		<hook hook="integrate_bbc_buttons" function="MessageBoxes::bbc_buttons" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
-		<hook hook="integrate_bbc_codes" function="MessageBoxes::bbc_code" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
-		<hook hook="integrate_load_permissions" function="MessageBoxes::permissions" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
-		<hook hook="integrate_general_mod_settings" function="MessageBoxes::settings" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
+		<hook hook="integrate_pre_load" function="BBC_MessageBoxes::initialize#" file="$sourcedir/BBC-MessageBoxes.php" reverse="true" />
 		<!-- Source Files -->
 		<remove-file name="$sourcedir/BBC-MessageBoxes.php">Source file</remove-file>
 		<!-- BBC images -->
@@ -51,7 +47,7 @@
 		<remove-file name="$imagesdir/bbc/okay_octagon.png">BBC images</remove-file>
 		<remove-file name="$imagesdir/bbc/okay-bullet.png">BBC images</remove-file>
 		<!-- BBC languages -->
-		<remove-dir name="$languagedir/mboxes">BBC languages</remove-dir>
+		<remove-dir name="$languagedir/mboxes">Language files</remove-dir>
 		<!-- BBC CSS -->
 		<remove-file name="$themedir/css/mboxes.css">BBC CSS</remove-file>
 		<!-- BBC JS -->
