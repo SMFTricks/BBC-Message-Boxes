@@ -47,6 +47,15 @@ class BBC_MessageBoxes
 		add_integration_function('integrate_preparsecode', 'BBC_MessageBoxes::preparsecode#', false);
 		add_integration_function('integrate_bbc_buttons', 'BBC_MessageBoxes::bbc_buttons#', false);
 		add_integration_function('integrate_bbc_codes', 'BBC_MessageBoxes::bbc_codes#', false);
+		add_integration_function('integrate_helpadmin', 'BBC_Messageboxes::language#', false);
+	}
+
+	/**
+	 * Load the languge
+	 */
+	public function language() : void
+	{
+		loadLanguage('mboxes/');
 	}
 
 	/**
@@ -56,7 +65,7 @@ class BBC_MessageBoxes
 	 */
 	public function css() : void
 	{
-		loadCSSFile('mboxes.css', array('minimize' => true, 'default_theme' => true), 'smf_bbc_messageboxes');
+		loadCSSFile('mboxes.css', ['minimize' => true, 'default_theme' => true], 'smf_bbc_messageboxes');
 	}
 
 	/**
@@ -68,7 +77,7 @@ class BBC_MessageBoxes
 	public function preparsecode(string &$message) : void
 	{
 		// Pattern
-		$tag_patterns = array();
+		$tag_patterns = [];
 		foreach ($this->_bbc_list as $bbc)
 			$tag_patterns[] = preg_quote($bbc) . '(?:(?!\]).)*?';
 		$pattern = '/\[(?:' . implode('|', $tag_patterns) . ')\](.*?)\[\/(?:' . implode('|', $this->_bbc_list) . ')\]/';
@@ -93,8 +102,8 @@ class BBC_MessageBoxes
 			return;
 
 		// Message Boxes bits
-		loadLanguage('mboxes/');
-		loadJavaScriptFile('mboxes.js', array('minimize' => true, 'default_theme' => true));
+		$this->language();
+		loadJavaScriptFile('mboxes.js', ['minimize' => true, 'default_theme' => true]);
 
 		// Add the BBCs
 		$bbc_tags[count($bbc_tags)-1][] = [];
@@ -144,9 +153,10 @@ class BBC_MessageBoxes
 	 * @param array $permissionGroups List of all the groups dependant on the currently selected view
 	 * @return void
 	 */
-	public function permissions(&$permissionGroups) : void
+	public function permissions(&$permissionGroups, &$permissionList) : void
 	{
-		$permissionGroups['membergroup']['mboxes_use'] = [false, 'general', 'view_basic_info'];
+		$this->language();
+		$permissionList['membergroup']['mboxes_use'] = [false, 'general'];
 	}
 
 	/**
@@ -159,8 +169,7 @@ class BBC_MessageBoxes
 	{
 		global $txt;
 
-		// Language
-		loadLanguage('mboxes/');
+		$this->language();
 
 		// Settings
 		$config_vars[] = ['title', 'mboxes_settings'];
