@@ -1,5 +1,10 @@
 # Changelog
 
+#### 3.1.1 - 13 December 2023
+- ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issue with permissions.
+- ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed missing help texts and descriptions.
+- ![Improvement](https://smftricks.com/assets/changelog/tag--pencil.png) Minor code improvements.
+
 #### 3.1 - 26 March 2023
 - ![New Feature](https://smftricks.com/assets/changelog/tag--plus.png) Permissions now prevent usage of the BBC.
 - ![Bug Fix](https://smftricks.com/assets/changelog/bug--minus.png) Fixed issue with settings.
